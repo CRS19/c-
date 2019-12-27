@@ -2,21 +2,26 @@
 
 class estudiantes{
 
-public:
-    char nombre[50];
-    int nota;
-private:
-    int cedula;
+    public:
+        char nombre[50];
+        int nota;
+    private:
+        int cedula;
 
-public:
-    int calcularNotas(int b);
-    estudiantes();
+    public: //
+        int calcularNotas(int b);
+        estudiantes();
+        estudiantes(int a);
 
 };
 
 int estudiantes::calcularNotas(int b){
     nota = nota + 1;
     return nota;
+}
+
+estudiantes::estudiantes(int a){
+    nota = a;
 }
 
 estudiantes::estudiantes(){
@@ -27,11 +32,12 @@ estudiantes::estudiantes(){
 
 int main(){
 
-
     std::cout << "hola mundo" << std::endl;
-
-    estudiantes cris;
-
+    estudiantes cris(10);
+    int resultado = cris.calcularNotas(1); 
+    std::cout << (resultado) << std::endl;
+    std::cout << cris.nota << std::endl;
+    
 
 return 0;
 }
